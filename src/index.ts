@@ -2,7 +2,14 @@ const text = document.getElementById('text') as HTMLInputElement;
 const submit = document.getElementById('submit');
 const todoContainer = document.getElementById('todoContainer');
 
+const myStorage = localStorage;
+const myStorageKey = 'todo-app.todos';
+
 const todos: string[] = [];
+
+function updateStorage() {
+  myStorage.setItem(myStorageKey, JSON.stringify(todos));
+}
 
 function renderTodos() {
   todoContainer.textContent = '';
@@ -13,6 +20,8 @@ function renderTodos() {
     newTodoElement.addEventListener('click', () => {
       todos.splice(index, 1);
 
+      updateStorage();
+
       renderTodos();
     });
 
@@ -20,8 +29,20 @@ function renderTodos() {
   });
 }
 
+function getTodosFromMyStorage() {
+  const oldTodos = JSON.parse(myStorage.getItem(myStorageKey));
+
+  oldTodos.forEach((todo: string) => { todos.push(todo); });
+
+  renderTodos();
+}
+
+getTodosFromMyStorage();
+
 function addTodo(todo: string) {
   todos.push(todo);
+
+  updateStorage();
 
   renderTodos();
 }
