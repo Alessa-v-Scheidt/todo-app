@@ -19,6 +19,8 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0"
   }
 }

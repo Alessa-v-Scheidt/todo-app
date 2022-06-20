@@ -1,3 +1,5 @@
+import './reset.css';
+
 const text = document.getElementById('text') as HTMLInputElement;
 const submit = document.getElementById('submit');
 const todoContainer = document.getElementById('todoContainer');
