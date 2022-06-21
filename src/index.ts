@@ -9,9 +9,7 @@ const myStorageKey = 'todo-app.todos';
 
 const todos: string[] = [];
 
-function updateStorage() {
-  myStorage.setItem(myStorageKey, JSON.stringify(todos));
-}
+const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
 
 function renderTodos() {
   todoContainer.textContent = '';
@@ -31,12 +29,12 @@ function renderTodos() {
   });
 }
 
-function getTodosFromMyStorage() {
+const getTodosFromMyStorage = () => {
   const oldTodos = JSON.parse(myStorage.getItem(myStorageKey));
   oldTodos?.forEach((todo: string) => { todos.push(todo); });
 
   renderTodos();
-}
+};
 
 getTodosFromMyStorage();
 
