@@ -11,6 +11,13 @@ const todos: string[] = [];
 
 const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
 
+const deleteTodo = (index, next) => {
+  todos.splice(index, 1);
+
+  updateStorage();
+  next();
+};
+
 const renderTodos = () => {
   todoContainer.textContent = '';
 
@@ -18,12 +25,7 @@ const renderTodos = () => {
     const newTodoElement = document.createElement('li');
     newTodoElement.innerHTML = todo;
     // Delete Listener
-    newTodoElement.addEventListener('click', () => {
-      todos.splice(index, 1);
-
-      updateStorage();
-      renderTodos();
-    });
+    newTodoElement.addEventListener('click', () => deleteTodo(index, renderTodos));
 
     todoContainer.appendChild(newTodoElement);
   });
