@@ -11,7 +11,7 @@ const todos: string[] = [];
 
 const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
 
-function renderTodos() {
+const renderTodos = () => {
   todoContainer.textContent = '';
 
   todos.forEach((todo, index) => {
@@ -27,7 +27,7 @@ function renderTodos() {
 
     todoContainer.appendChild(newTodoElement);
   });
-}
+};
 
 const getTodosFromMyStorage = () => {
   const oldTodos = JSON.parse(myStorage.getItem(myStorageKey));
@@ -38,13 +38,14 @@ const getTodosFromMyStorage = () => {
 
 getTodosFromMyStorage();
 
-function addTodo(todo: string) {
+const addTodo = (todo:string) => {
   todos.push(todo);
 
   updateStorage();
 
   renderTodos();
-}
+};
+
 submit.addEventListener('click', () => {
   if (text?.value === '') return;
 
