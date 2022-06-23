@@ -6,13 +6,19 @@ const todoContainer = document.getElementById('todoContainer');
 
 const myStorage = localStorage;
 const myStorageKey = 'todo-app.todos';
+let lastId;
 
-const todos: string[] = [];
+interface Todo {
+  task: string;
+  id: number;
+}
+
+let todos: Todo[] = [];
 
 const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
 
-const deleteTodo = (index, next) => {
-  todos.splice(index, 1);
+const deleteTodo = (id: number, next) => {
+  todos = todos.filter((todo) => todo.id !== id);
 
   updateStorage();
   next();
@@ -21,11 +27,11 @@ const deleteTodo = (index, next) => {
 const renderTodos = () => {
   todoContainer.textContent = '';
 
-  todos.forEach((todo, index) => {
+  todos.forEach((todo) => {
     const newTodoElement = document.createElement('li');
-    newTodoElement.innerHTML = todo;
+    newTodoElement.innerHTML = todo.task;
     // Delete Listener
-    newTodoElement.addEventListener('click', () => deleteTodo(index, renderTodos));
+    newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
     todoContainer.appendChild(newTodoElement);
   });
@@ -33,18 +39,23 @@ const renderTodos = () => {
 
 const getTodosFromMyStorage = () => {
   const oldTodos = JSON.parse(myStorage.getItem(myStorageKey));
-  oldTodos?.forEach((todo: string) => { todos.push(todo); });
+  oldTodos?.forEach((todo: Todo) => { todos.push(todo); });
 
   renderTodos();
 };
 
-getTodosFromMyStorage();
+const generateId = () => {
+  lastId += 1;
+  return lastId;
+};
 
-const addTodo = (todo:string) => {
-  todos.push(todo);
+const addTodo = (task: string) => {
+  todos.push({
+    task,
+    id: generateId(),
+  });
 
   updateStorage();
-
   renderTodos();
 };
 
@@ -55,3 +66,11 @@ submit.addEventListener('click', () => {
 
   text.value = '';
 });
+
+// init
+getTodosFromMyStorage();
+if (todos.length > 0) {
+  lastId = Math.max(...todos.map((todo) => todo.id));
+} else {
+  lastId = 0;
+}
