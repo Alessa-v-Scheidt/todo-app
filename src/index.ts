@@ -1,53 +1,31 @@
 import './reset.css';
+import { getTodosFromMyStorage, updateStorage } from './local-storage';
 import { Todo } from './Todo';
+import generateId from './id-helper';
 
-const text = document.getElementById('text') as HTMLInputElement;
-const submit = document.getElementById('submit');
 const todoContainer = document.getElementById('todoContainer');
+const text = document.getElementById('text') as HTMLInputElement;
 
-const myStorage = localStorage;
-const myStorageKey = 'todo-app.todos';
-let lastId: number;
+const todos: Todo[] = getTodosFromMyStorage();
 
-let todos: Todo[] = [];
-
-const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
-
-const deleteTodo = (id: number, next: () => void) => {
-  todos = todos.filter((todo) => todo.id !== id);
-
-  updateStorage();
-  next();
-};
-
-const renderTodos = () => {
+// Render todo list
+export const renderTodos = (todosToRender: Todo[]) => {
   if (!todoContainer) return;
   todoContainer.textContent = '';
 
-  todos.forEach((todo) => {
+  todosToRender.forEach((todo) => {
     const newTodoElement = document.createElement('li');
     newTodoElement.innerHTML = todo.task;
+
     // Delete Listener
-    newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
+    newTodoElement.addEventListener('click', () => {
+      const deleteIndex = todos.findIndex((todoToDelete) => todoToDelete.id === todo.id);
+      todos.splice(deleteIndex, 1);
+      renderTodos(todos);
+    });
 
     todoContainer?.appendChild(newTodoElement);
   });
-};
-
-const getTodosFromMyStorage = () => {
-  const oldTodoString = myStorage.getItem(myStorageKey);
-
-  if (!oldTodoString) return;
-
-  const oldTodos = JSON.parse(oldTodoString);
-  oldTodos?.forEach((todo: Todo) => { todos.push(todo); });
-
-  renderTodos();
-};
-
-const generateId = () => {
-  lastId += 1;
-  return lastId;
 };
 
 const addTodo = (task: string) => {
@@ -56,31 +34,19 @@ const addTodo = (task: string) => {
     id: generateId(),
   });
 
-  updateStorage();
-  renderTodos();
+  updateStorage(todos);
+  renderTodos(todos);
 };
 
-const submitEvent = () => {
-  submit?.addEventListener('click', () => {
-    if (text?.value === '') return;
+// Submit
+export const handleSubmit = () => {
+  if (text?.value === '') return;
 
-    addTodo(text.value);
-
-    text.value = '';
-  });
+  addTodo(text.value);
+  text.value = '';
 };
 
-submitEvent();
+document.getElementById('submit')?.addEventListener('click', handleSubmit);
 
-// init
-getTodosFromMyStorage();
-
-const setLastID = () => {
-  if (todos.length > 0) {
-    lastId = Math.max(...todos.map((todo) => todo.id));
-  } else {
-    lastId = 0;
-  }
-};
-
-setLastID();
+// Render existing todos
+renderTodos(todos);
