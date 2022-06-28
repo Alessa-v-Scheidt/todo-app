@@ -59,18 +59,27 @@ const addTodo = (task: string) => {
   renderTodos();
 };
 
-submit.addEventListener('click', () => {
-  if (text?.value === '') return;
+const submitEvent = () => {
+  submit.addEventListener('click', () => {
+    if (text?.value === '') return;
 
-  addTodo(text.value);
+    addTodo(text.value);
 
-  text.value = '';
-});
+    text.value = '';
+  });
+};
+
+submitEvent();
 
 // init
 getTodosFromMyStorage();
-if (todos.length > 0) {
-  lastId = Math.max(...todos.map((todo) => todo.id));
-} else {
-  lastId = 0;
-}
+
+const setLastID = () => {
+  if (todos.length > 0) {
+    lastId = Math.max(...todos.map((todo) => todo.id));
+  } else {
+    lastId = 0;
+  }
+};
+
+setLastID();
