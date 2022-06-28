@@ -1,4 +1,5 @@
 import './reset.css';
+import { Todo } from './Todo';
 
 const text = document.getElementById('text') as HTMLInputElement;
 const submit = document.getElementById('submit');
@@ -6,18 +7,13 @@ const todoContainer = document.getElementById('todoContainer');
 
 const myStorage = localStorage;
 const myStorageKey = 'todo-app.todos';
-let lastId;
-
-interface Todo {
-  task: string;
-  id: number;
-}
+let lastId: number;
 
 let todos: Todo[] = [];
 
 const updateStorage = () => myStorage.setItem(myStorageKey, JSON.stringify(todos));
 
-const deleteTodo = (id: number, next) => {
+const deleteTodo = (id: number, next: () => void) => {
   todos = todos.filter((todo) => todo.id !== id);
 
   updateStorage();
@@ -25,6 +21,7 @@ const deleteTodo = (id: number, next) => {
 };
 
 const renderTodos = () => {
+  if (!todoContainer) return;
   todoContainer.textContent = '';
 
   todos.forEach((todo) => {
@@ -33,12 +30,16 @@ const renderTodos = () => {
     // Delete Listener
     newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
-    todoContainer.appendChild(newTodoElement);
+    todoContainer?.appendChild(newTodoElement);
   });
 };
 
 const getTodosFromMyStorage = () => {
-  const oldTodos = JSON.parse(myStorage.getItem(myStorageKey));
+  const oldTodoString = myStorage.getItem(myStorageKey);
+
+  if (!oldTodoString) return;
+
+  const oldTodos = JSON.parse(oldTodoString);
   oldTodos?.forEach((todo: Todo) => { todos.push(todo); });
 
   renderTodos();
@@ -60,7 +61,7 @@ const addTodo = (task: string) => {
 };
 
 const submitEvent = () => {
-  submit.addEventListener('click', () => {
+  submit?.addEventListener('click', () => {
     if (text?.value === '') return;
 
     addTodo(text.value);

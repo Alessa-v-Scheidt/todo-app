@@ -16,5 +16,18 @@ module.exports = {
   ],
   rules: {
     'func-style': ['error', 'expression'],
+    'import/extensions': [
+      'error',
+      {
+        ts: 'never',
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };
