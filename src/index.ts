@@ -8,6 +8,13 @@ const text = document.getElementById('text') as HTMLInputElement;
 
 const todos: Todo[] = getTodosFromMyStorage();
 
+const deleteTodo = (id: string, next: Function) => {
+  const deleteIndex = todos.findIndex((todoToDelete) => todoToDelete.id === id);
+  todos.splice(deleteIndex, 1);
+  updateStorage(todos);
+  next(todos);
+};
+
 // Render todo list
 export const renderTodos = (todosToRender: Todo[]) => {
   if (!todoContainer) return;
@@ -18,12 +25,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
     newTodoElement.innerHTML = todo.task;
 
     // Delete Listener
-    newTodoElement.addEventListener('click', () => {
-      const deleteIndex = todos.findIndex((todoToDelete) => todoToDelete.id === todo.id);
-      todos.splice(deleteIndex, 1);
-      updateStorage(todos);
-      renderTodos(todos);
-    });
+    newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
     todoContainer?.appendChild(newTodoElement);
   });
