@@ -21,6 +21,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
     newTodoElement.addEventListener('click', () => {
       const deleteIndex = todos.findIndex((todoToDelete) => todoToDelete.id === todo.id);
       todos.splice(deleteIndex, 1);
+      updateStorage(todos);
       renderTodos(todos);
     });
 
@@ -31,7 +32,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
 const addTodo = (task: string) => {
   todos.push({
     task,
-    id: generateId(),
+    id: generateId(task),
   });
 
   updateStorage(todos);
