@@ -1,4 +1,4 @@
 export interface Todo {
-    task: string;
-    id: string;
+    task: string
+    id: string
   }
