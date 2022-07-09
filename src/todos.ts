@@ -24,6 +24,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
     // Delete Listener
     newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
+    console.log(todo.id);
     todoContainer?.appendChild(newTodoElement);
   });
 };
@@ -31,7 +32,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
 export const addTodo = (task: string) => {
   todos.push({
     task,
-    id: generateId(task),
+    id: generateId(),
   });
 
   updateStorage(todos);
