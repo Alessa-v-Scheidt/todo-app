@@ -1,8 +1,8 @@
 import './reset.css';
-import './submit';
-import { getTodosFromMyStorage } from './local-storage';
-import { Todo } from './Todo';
-import { renderTodos } from './todos';
+import './components/organisms/submit';
+import { getTodosFromMyStorage } from './components/molecules/local-storage';
+import { Todo } from './components/atoms/Todo';
+import { renderTodos } from './components/organisms/todos';
 
 const todos: Todo[] = getTodosFromMyStorage();
 

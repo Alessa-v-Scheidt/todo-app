@@ -1,6 +1,6 @@
-import generateId from './id-helper';
-import { getTodosFromMyStorage, updateStorage } from './local-storage';
-import { Todo } from './Todo';
+import generateId from '../atoms/id-helper';
+import { getTodosFromMyStorage, updateStorage } from '../molecules/local-storage';
+import { Todo } from '../atoms/Todo';
 
 const todoContainer = document.getElementById('todoContainer');
 const todos: Todo[] = getTodosFromMyStorage();
