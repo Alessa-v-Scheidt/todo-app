@@ -4,7 +4,7 @@ export default () => {
 
   for (let i = 0; i < 36; i += 1) {
     const randomIndex = Math.floor(Math.random() * hexDigits.length);
-    uuid[i] = hexDigits.substring(randomIndex, randomIndex + 1);
+    uuid[i] = hexDigits.charAt(randomIndex);
   }
 
   // versionsnummer (version 4 = random uuid)
