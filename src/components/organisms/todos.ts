@@ -1,4 +1,4 @@
-import generateId from '../atoms/id-helper';
+import generateId from '../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../molecules/local-storage';
 import { Todo } from '../atoms/Todo';
 
@@ -24,7 +24,6 @@ export const renderTodos = (todosToRender: Todo[]) => {
     // Delete Listener
     newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
-    console.log(todo.id);
     todoContainer?.appendChild(newTodoElement);
   });
 };
