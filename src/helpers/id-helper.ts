@@ -1,4 +1,6 @@
-export default () => {
+import { Todo } from '../components/atoms/Todo';
+
+const generateId = () => {
   const uuid: string[] = new Array(36);
   const hexDigits = '0123456789abcdef';
 
@@ -18,4 +20,16 @@ export default () => {
 
   const newUuid = uuid.join('');
   return newUuid;
+};
+
+const isUnique = (id: string, todos: Todo[]) => !todos.some((todo) => todo.id === id);
+
+export default (todos: Todo[]) => {
+  let newId = generateId();
+
+  while (!isUnique(newId, todos)) {
+    newId = generateId();
+  }
+
+  return newId;
 };
