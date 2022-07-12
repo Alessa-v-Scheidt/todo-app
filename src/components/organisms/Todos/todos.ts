@@ -2,6 +2,7 @@ import { Todo } from '../../../helpers/Todo';
 import validateId from '../../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../../molecules/local-storage';
 import todoContainer from './todo.config';
+import generateListElement from '../../molecules/listElement';
 
 const container = todoContainer;
 const todos: Todo[] = getTodosFromMyStorage();
@@ -19,13 +20,9 @@ export const renderTodos = (todosToRender: Todo[]) => {
   container.textContent = '';
 
   todosToRender.forEach((todo) => {
-    const newTodoElement = document.createElement('li');
-    newTodoElement.innerHTML = todo.task;
+    const newListElement = generateListElement(todo.task, () => deleteTodo(todo.id, renderTodos));
 
-    // Delete Listener
-    newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
-
-    container?.appendChild(newTodoElement);
+    container?.appendChild(newListElement);
   });
 };
 
