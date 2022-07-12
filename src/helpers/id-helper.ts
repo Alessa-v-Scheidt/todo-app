@@ -1,4 +1,4 @@
-import { Todo } from '../components/atoms/Todo';
+import { Todo } from './Todo';
 
 const generateId = () => {
   const uuid: string[] = new Array(36);

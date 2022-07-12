@@ -1,4 +1,4 @@
-import { addTodo } from './todos';
+import { addTodo } from '../organisms/Todos/todos';
 
 const text = document.getElementById('text') as HTMLInputElement;
 
