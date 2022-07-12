@@ -1,8 +1,9 @@
 import { Todo } from '../../../helpers/Todo';
 import validateId from '../../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../../molecules/local-storage';
+import todoContainer from './todo.config';
 
-const todoContainer = document.getElementById('todoContainer');
+const container = todoContainer;
 const todos: Todo[] = getTodosFromMyStorage();
 
 const deleteTodo = (id: string, next: Function) => {
@@ -14,8 +15,8 @@ const deleteTodo = (id: string, next: Function) => {
 
 // Render todo list
 export const renderTodos = (todosToRender: Todo[]) => {
-  if (!todoContainer) return;
-  todoContainer.textContent = '';
+  if (!container) return;
+  container.textContent = '';
 
   todosToRender.forEach((todo) => {
     const newTodoElement = document.createElement('li');
@@ -24,7 +25,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
     // Delete Listener
     newTodoElement.addEventListener('click', () => deleteTodo(todo.id, renderTodos));
 
-    todoContainer?.appendChild(newTodoElement);
+    container?.appendChild(newTodoElement);
   });
 };
 
