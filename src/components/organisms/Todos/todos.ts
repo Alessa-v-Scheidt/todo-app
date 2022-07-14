@@ -21,6 +21,7 @@ const submitEditedTodo = (todoId: string, input: HTMLInputElement, next: Functio
 
   todoToEdit.task = input.value;
 
+  updateStorage(todos);
   next(todos);
 };
 

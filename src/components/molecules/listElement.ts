@@ -9,7 +9,7 @@ export default (
 ) => {
   const newListElement = document.createElement('div');
   const todoTask = document.createElement('span');
-  todoTask.innerHTML = todoText;
+  todoTask.textContent = todoText;
   const editElement = generateEditElement(editSubmitCallback);
   const editButton = generateButton('edit', () => editCallback(editElement));
   const deleteButton = generateButton('delete', deleteCallback);
