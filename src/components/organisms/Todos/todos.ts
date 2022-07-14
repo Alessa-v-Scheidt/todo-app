@@ -14,13 +14,38 @@ const deleteTodo = (id: string, next: Function) => {
   next(todos);
 };
 
+const submitEditedTodo = (todoId: string, input: HTMLInputElement, next: Function) => {
+  const todoToEdit = todos.find((todo) => todo.id === todoId);
+
+  if (!todoToEdit || input.value === '') return;
+
+  todoToEdit.task = input.value;
+
+  next(todos);
+};
+
+const openEditInput = (editElement: HTMLElement) => {
+  const editRef = editElement;
+
+  if (editRef?.style.display === 'none') {
+    editRef.style.display = 'block';
+  } else {
+    editRef.style.display = 'none';
+  }
+};
+
 // Render todo list
 export const renderTodos = (todosToRender: Todo[]) => {
   if (!container) return;
   container.textContent = '';
 
   todosToRender.forEach((todo) => {
-    const newListElement = generateListElement(todo.task, () => deleteTodo(todo.id, renderTodos));
+    const newListElement = generateListElement(
+      todo.task,
+      openEditInput,
+      () => deleteTodo(todo.id, renderTodos),
+      (inputElement: HTMLInputElement) => submitEditedTodo(todo.id, inputElement, renderTodos),
+    );
 
     container?.appendChild(newListElement);
   });
