@@ -1,6 +1,6 @@
 import { Todo } from '../../../helpers/Todo';
 import validateId from '../../../helpers/id-helper';
-import { getTodosFromMyStorage, updateStorage } from '../../molecules/local-storage';
+import { getTodosFromMyStorage, updateStorage } from '../../../helpers/local-storage';
 import todoContainer from './todo.config';
 import generateListElement from '../../molecules/listElement';
 

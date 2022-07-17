@@ -1,4 +1,4 @@
-import { Todo } from '../../helpers/Todo';
+import { Todo } from './Todo';
 
 const storageKey = 'todo-app.todos';
 
