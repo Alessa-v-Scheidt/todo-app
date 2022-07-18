@@ -1,7 +1,7 @@
-import generateButton from '../atoms/button';
-import generateEditElement from './editElement';
+import { generateButton } from '../atoms/button';
+import { generateEditElement } from './editElement';
 
-export default (
+export const generateListElement = (
   todoText: string,
   editCallback: Function,
   deleteCallback: () => void,

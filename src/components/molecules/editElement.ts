@@ -1,6 +1,6 @@
-import generateButton from '../atoms/button';
+import { generateButton } from '../atoms/button';
 
-export default (editSubmitCallback: Function) => {
+export const generateEditElement = (editSubmitCallback: Function) => {
   const newEditElement = document.createElement('div');
   const editInput = document.createElement('input');
   const editSubmitButton = generateButton('submit', () => editSubmitCallback(editInput));
