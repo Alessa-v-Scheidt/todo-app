@@ -1,7 +1,8 @@
 const generateId = () => {
-  const uuid: string[] = new Array(36);
+  const uuid: string[] = new Array(36).fill('0');
   const hexDigits = '0123456789abcdef';
 
+  // foreach funktioniert nur auf gefüllten arrays
   uuid.forEach((_, index) => {
     const randomIndex = Math.floor(Math.random() * hexDigits.length);
     uuid[index] = hexDigits.charAt(randomIndex);

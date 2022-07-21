@@ -41,12 +41,13 @@ export const renderTodos = (todosToRender: Todo[]) => {
   container.textContent = '';
 
   todosToRender.forEach((todo) => {
-    const newListElement = generateListElement(
-      todo.task,
-      openEditInput,
-      () => deleteTodo(todo.id, renderTodos),
-      (inputElement: HTMLInputElement) => submitEditedTodo(todo.id, inputElement, renderTodos),
-    );
+    const newListElement = generateListElement({
+      todoText: todo.task,
+      editCallback: openEditInput,
+      deleteCallback: () => deleteTodo(todo.id, renderTodos),
+      editSubmitCallback:
+        (inputElement: HTMLInputElement) => submitEditedTodo(todo.id, inputElement, renderTodos),
+    });
 
     container?.appendChild(newListElement);
   });
