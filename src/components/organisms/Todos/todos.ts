@@ -1,5 +1,5 @@
 import { Todo } from '../../../helpers/Todo';
-import validateId from '../../../helpers/id-helper';
+import { validateId } from '../../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../../../helpers/local-storage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/listElement';
@@ -55,7 +55,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
 export const addTodo = (task: string) => {
   todos.push({
     task,
-    id: validateId(todos),
+    id: validateId(),
   });
 
   updateStorage(todos);

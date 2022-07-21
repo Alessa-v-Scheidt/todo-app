@@ -1,13 +1,11 @@
-import { Todo } from './Todo';
-
 const generateId = () => {
   const uuid: string[] = new Array(36);
   const hexDigits = '0123456789abcdef';
 
-  for (let i = 0; i < 36; i += 1) {
+  uuid.forEach((_, index) => {
     const randomIndex = Math.floor(Math.random() * hexDigits.length);
-    uuid[i] = hexDigits.charAt(randomIndex);
-  }
+    uuid[index] = hexDigits.charAt(randomIndex);
+  });
 
   // versionsnummer (version 4 = random uuid)
   uuid[14] = '4';
@@ -22,12 +20,11 @@ const generateId = () => {
   return newUuid;
 };
 
-const isUnique = (id: string, todos: Todo[]) => !todos.some((todo) => todo.id === id);
-
-export default (todos: Todo[]) => {
+export const validateId = () => {
+  const localStorageString = JSON.stringify(window.localStorage);
   let newId = generateId();
 
-  while (!isUnique(newId, todos)) {
+  while (localStorageString.includes(newId)) {
     newId = generateId();
   }
 
