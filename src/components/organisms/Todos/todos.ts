@@ -3,7 +3,7 @@ import { validateId } from '../../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../../../helpers/local-storage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/listElement';
-import { openEditInput, submitEditedTodo } from '../../../helpers/button-callback';
+import { toggleEditInput, submitEditedTodo } from '../../../helpers/button-callback';
 
 const container = todoContainer;
 const todos: Todo[] = getTodosFromMyStorage();
@@ -23,7 +23,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
   todosToRender.forEach((todo) => {
     const newListElement = generateListElement({
       todoText: todo.task,
-      editCallback: openEditInput,
+      editCallback: toggleEditInput,
       deleteCallback: () => deleteTodo(todo.id, renderTodos),
       editSubmitCallback:
         (inputElement: HTMLInputElement) => submitEditedTodo(todo.id, inputElement, renderTodos),
