@@ -2,21 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1">
     <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script defer src="main.js"></script>
   </head>
   <body>
-    <h1>Todo App</h1>
+    <header>
+      <h1>TODO</h1>
+    </header>
     <ul id="todoContainer">
 
     </ul>
     <!-- <input id="text" type="text">
     <button id="submit">Submit</button> -->
-    <button id="openModal">+</button>
+    <button id="open-modal">+</button>
     <div class="modal" id="modal">
       <div class="modal-content">
         <input id="newTodoInput">
-        <button id="modal-submit">Submit</button>
+        <button id="modal-submit">Add</button>
       </div>
     </div>
   </body>

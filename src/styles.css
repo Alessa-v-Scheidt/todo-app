@@ -13,7 +13,15 @@
   --darkest-transparent: rgba(0, 0, 0, 0.15);
 
   /* Spacing */
-
+  --xxs: 0.25rem;
+  --xs: 0.5rem;
+  --s: 0.75rem;
+  --m: 1rem;
+  --l: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 2rem;
+  --xxxl: 3rem;
+  --xxxxl: 4rem;
 
   /* Percent */
   --0: 0%;
@@ -38,10 +46,65 @@
   --95: 95%;
   --100: 100%;
 
+  /* Border */
+  --border-width-s: 1px;
+  --boder-width-m: 2px;
+  --border-width-l: 3px;
+
+  /* Font */
+  --ff: 'Inter', sans-serif;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --fs-s: 12px;
+  --fs-m: 14px;
+  --fs-l: 32px;
+
+  --text-shadow-light: 5px 2px 0px var(--lightest);
 
 }
 /*############################################################################*/
 /* Base Styling */
+body{
+  font-family: var(--ff);
+  font-size: var(--fs-m);
+}
+
+header{
+  background-image: linear-gradient(var(--yellow-dark), var(--yellow-light));
+  padding: var(--xl) 0 var(--xl) 0;
+}
+
+h1{
+  font-weight: var(--fw-bold);
+  color: var(--dark);
+  text-shadow: var(--text-shadow-light);
+  font-size: var(--xxxl);
+  padding-left: var(--xxl);
+}
+
+ul{
+  margin-top: var(--xxxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul>div{
+  width: var(--70);
+  border-style: solid;
+  border-width: var(--boder-width-m) var(--boder-width-m);
+  border-radius: 10px;
+  margin: var(--m) 0 var(--m) 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--l);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+}
 
 input{
   background-color: red;
@@ -52,6 +115,21 @@ button{
   border-width: 2px 2px;
   border-color: black;
   margin: 0 0.25rem 0 0.25rem;
+}
+
+#open-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  right: var(--xxxxl);
+  bottom: var(--xxxxl);
+  font-size: 3rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /*############################################################################*/
@@ -67,9 +145,14 @@ button{
 }
 
 .modal-content{
-  background-color: var(--yellow-dark);
+  background-color: var(--lightest);
   margin: var(--15) auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: var(--80);
+  width: var(--60);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/*############################################################################*/
+/* Media Querys */
