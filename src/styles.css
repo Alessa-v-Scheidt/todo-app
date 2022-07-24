@@ -1,3 +1,48 @@
+:root{
+  /* Colors */
+  --lightest: #fff;
+  --light: #f6f6f6;
+  --medium: #83787b;
+  --dark: #5f575a;
+  --darkest: #000;
+
+  --yellow-light: #fff477;
+  --yellow-medium: #ffed00;
+  --yellow-dark: #fce800;
+
+  --darkest-transparent: rgba(0, 0, 0, 0.15);
+
+  /* Spacing */
+
+
+  /* Percent */
+  --0: 0%;
+  --5: 5%;
+  --10: 10%;
+  --15: 15%;
+  --20: 20%;
+  --25: 25%;
+  --30: 30%;
+  --35: 35%;
+  --40: 40%;
+  --45: 45%;
+  --50: 50%;
+  --55: 55%;
+  --60: 60%;
+  --65: 65%;
+  --70: 70%;
+  --75: 75%;
+  --80: 80%;
+  --85: 85%;
+  --90: 90%;
+  --95: 95%;
+  --100: 100%;
+
+
+}
+/*############################################################################*/
+/* Base Styling */
+
 input{
   background-color: red;
 }
@@ -7,4 +52,24 @@ button{
   border-width: 2px 2px;
   border-color: black;
   margin: 0 0.25rem 0 0.25rem;
+}
+
+/*############################################################################*/
+/* Classes */
+.modal{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--100);
+  height: var(--100);
+  background-color: var(--darkest-transparent);
+}
+
+.modal-content{
+  background-color: var(--yellow-dark);
+  margin: var(--15) auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: var(--80);
 }
