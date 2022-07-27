@@ -22,7 +22,7 @@ export const renderTodos = (todosToRender: Todo[]) => {
 
   todosToRender.forEach((todo) => {
     const newListElement = generateListElement({
-      todoText: todo.task,
+      text: todo.task,
       editCallback: toggleEditInput,
       deleteCallback: () => deleteTodo(todo.id, renderTodos),
       editSubmitCallback:

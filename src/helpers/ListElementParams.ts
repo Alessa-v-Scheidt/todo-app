@@ -1,5 +1,5 @@
 export interface ListElementParams {
-  todoText: string
+  text: string
   editCallback: Function
   deleteCallback: () => void
   editSubmitCallback: Function

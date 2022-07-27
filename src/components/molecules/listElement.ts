@@ -3,14 +3,14 @@ import { generateButton } from '../atoms/button';
 import { generateEditElement } from './editElement';
 
 export const generateListElement = ({
-  todoText,
+  text,
   editCallback,
   deleteCallback,
   editSubmitCallback,
 }: ListElementParams) => {
-  const newListElement = document.createElement('div');
+  const newListElement = document.createElement('li');
   const todoTask = document.createElement('span');
-  todoTask.textContent = todoText;
+  todoTask.textContent = text;
   const editElement = generateEditElement(editSubmitCallback);
   const editButton = generateButton({
     text: 'edit',
