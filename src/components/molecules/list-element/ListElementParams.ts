@@ -1,6 +1,6 @@
 export interface ListElementParams {
   text: string
-  editCallback: Function
+  editCallback: (editElement: HTMLElement) => void
   deleteCallback: () => void
-  editSubmitCallback: Function
+  editSubmitCallback: (inputElement: HTMLInputElement) => void
 }
