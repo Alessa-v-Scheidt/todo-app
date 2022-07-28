@@ -1,6 +1,6 @@
-import { ListElementParams } from '../../helpers/ListElementParams';
-import { generateButton } from '../atoms/button';
-import { generateEditElement } from './editElement';
+import { ListElementParams } from './ListElementParams';
+import { generateButton } from '../../atoms/button/button';
+import { generateEditElement } from '../edit-element/editElement';
 
 export const generateListElement = ({
   text,

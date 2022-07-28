@@ -1,4 +1,4 @@
-import { ButtonParams } from '../../helpers/ButtonParams';
+import { ButtonParams } from './ButtonParams';
 
 export const generateButton = ({ text, onClick: callback }: ButtonParams) => {
   const newButton = document.createElement('button');

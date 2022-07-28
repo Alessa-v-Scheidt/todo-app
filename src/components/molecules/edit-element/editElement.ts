@@ -1,4 +1,4 @@
-import { generateButton } from '../atoms/button';
+import { generateButton } from '../../atoms/button/button';
 
 export const generateEditElement = (editSubmitCallback: Function) => {
   const newEditElement = document.createElement('div');

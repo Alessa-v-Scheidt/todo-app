@@ -2,7 +2,7 @@ import { Todo } from '../../../helpers/Todo';
 import { validateId } from '../../../helpers/id-helper';
 import { getTodosFromMyStorage, updateStorage } from '../../../helpers/local-storage';
 import todoContainer from './todo.config';
-import { generateListElement } from '../../molecules/listElement';
+import { generateListElement } from '../../molecules/list-element/listElement';
 import { toggleEditInput, submitEditedTodo } from '../../../helpers/button-callback';
 
 const container = todoContainer;
