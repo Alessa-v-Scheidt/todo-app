@@ -14,11 +14,11 @@ export const generateListElement = ({
   const editElement = generateEditElement(editSubmitCallback);
   const editButton = generateButton({
     text: 'edit',
-    callback: () => editCallback(editElement),
+    onClick: () => editCallback(editElement),
   });
   const deleteButton = generateButton({
     text: 'delete',
-    callback: deleteCallback,
+    onClick: deleteCallback,
   });
 
   newListElement.appendChild(todoTask);

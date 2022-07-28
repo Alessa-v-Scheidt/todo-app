@@ -5,7 +5,7 @@ export const generateEditElement = (editSubmitCallback: Function) => {
   const editInput = document.createElement('input');
   const editSubmitButton = generateButton({
     text: 'submit',
-    callback: () => editSubmitCallback(editInput),
+    onClick: () => editSubmitCallback(editInput),
   });
 
   // damit Element standardmäßig hidden ist
