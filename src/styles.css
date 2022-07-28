@@ -74,7 +74,7 @@ li {
   border-radius: 10px;
   margin: 1rem 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem;
@@ -136,12 +136,17 @@ so soll postcss es mir danach zusammen schustern
 
 .modal-content {
   background-color: var(--lightest);
-  margin: 15% auto;
   padding: 20px;
   width: 60%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
 }
 
 /* ############################################################################ */

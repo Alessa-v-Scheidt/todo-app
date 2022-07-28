@@ -9,6 +9,7 @@ export const generateListElement = ({
   editSubmitCallback,
 }: ListElementParams) => {
   const newListElement = document.createElement('li');
+  const elementContainer = document.createElement('div');
   const todoTask = document.createElement('span');
   todoTask.textContent = text;
   const editElement = generateEditElement(editSubmitCallback);
@@ -21,9 +22,11 @@ export const generateListElement = ({
     onClick: deleteCallback,
   });
 
-  newListElement.appendChild(todoTask);
-  newListElement.appendChild(editButton);
-  newListElement.appendChild(deleteButton);
+  elementContainer.appendChild(todoTask);
+  elementContainer.appendChild(editButton);
+  elementContainer.appendChild(deleteButton);
+
+  newListElement.appendChild(elementContainer);
   newListElement.appendChild(editElement);
 
   return newListElement;
