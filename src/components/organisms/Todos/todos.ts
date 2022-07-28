@@ -26,7 +26,10 @@ export const renderTodos = (todosToRender: Todo[]) => {
       editCallback: toggleEditInput,
       deleteCallback: () => deleteTodo(todo.id, renderTodos),
       editSubmitCallback:
-        (inputElement: HTMLInputElement) => submitEditedTodo(todo.id, inputElement, renderTodos),
+        (inputElement: HTMLInputElement) => submitEditedTodo({
+          todoId: todo.id,
+          input: inputElement,
+        }),
     });
 
     container?.appendChild(newListElement);
