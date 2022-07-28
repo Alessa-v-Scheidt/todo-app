@@ -1,17 +1,22 @@
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+1. Prevent padding and border from affecting element width.
+(https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width.
+(https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
 * {
-	box-sizing: border-box;
-	/* 1 */
-	border-width: 0;
-	/* 2 */
-	border-style: solid;
-	/* 2 */
+  box-sizing: border-box;
+
+  /* 1 */
+  border-width: 0;
+
+  /* 2 */
+  border-style: solid;
+
+  /* 2 */
 }
 
 /*
@@ -20,10 +25,12 @@
 */
 
 body {
-	margin: 0;
-	/* 1 */
-	line-height: inherit;
-	/* 2 */
+  margin: 0;
+
+  /* 1 */
+  line-height: inherit;
+
+  /* 2 */
 }
 
 /*
@@ -36,8 +43,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: inherit;
-	font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 /*
@@ -47,21 +54,28 @@ h6 {
 */
 
 button,
-input{
-	font-family: inherit;
-	/* 1 */
-	font-size: 100%;
-	/* 1 */
-	font-weight: inherit;
-	/* 1 */
-	line-height: inherit;
-	/* 1 */
-	color: inherit;
-	/* 1 */
-	margin: 0;
-	/* 2 */
-	padding: 0;
-	/* 3 */
+input {
+  font-family: inherit;
+
+  /* 1 */
+  font-size: 100%;
+
+  /* 1 */
+  font-weight: inherit;
+
+  /* 1 */
+  line-height: inherit;
+
+  /* 1 */
+  color: inherit;
+
+  /* 1 */
+  margin: 0;
+
+  /* 2 */
+  padding: 0;
+
+  /* 3 */
 }
 
 /*
@@ -70,14 +84,17 @@ input{
 */
 
 button,
-[type='button'],
-[type='submit'] {
-	-webkit-appearance: button;
-	/* 1 */
-	background-color: transparent;
-	/* 2 */
-	background-image: none;
-	/* 2 */
+[type="button"],
+[type="submit"] {
+  appearance: button;
+
+  /* 1 */
+  background-color: transparent;
+
+  /* 2 */
+  background-image: none;
+
+  /* 2 */
 }
 
 /*
@@ -90,21 +107,21 @@ h3,
 h4,
 h5,
 h6,
-p{
-	margin: 0;
+p {
+  margin: 0;
 }
 
 ol,
-ul{
-	list-style: none;
-	margin: 0;
-	padding: 0;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*
 Set the default cursor for buttons.
 */
 
-button{
-	cursor: pointer;
+button {
+  cursor: pointer;
 }
