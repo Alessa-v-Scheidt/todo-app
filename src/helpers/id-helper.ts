@@ -1,24 +1,18 @@
 const generateId = () => {
-  const uuid: string[] = new Array(36).fill('0');
   const hexDigits = '0123456789abcdef';
 
-  // foreach funktioniert nur auf gefüllten arrays
-  uuid.forEach((_, index) => {
-    const randomIndex = Math.floor(Math.random() * hexDigits.length);
-    uuid[index] = hexDigits.charAt(randomIndex);
-  });
+  return new Array(36).fill('0')
+    .map((element, index) => {
+    // versionsnummer (version 4 = random uuid)
+      if (index === 14) return '4';
 
-  // versionsnummer (version 4 = random uuid)
-  uuid[14] = '4';
+      // trennstriche zwischen den 5 gruppen (8-4-4-4-12)
+      if ([8, 13, 18, 23].includes(index)) return '-';
 
-  // trennstriche zwischen den 5 gruppen (8-4-4-4-12)
-  uuid[8] = '-';
-  uuid[13] = '-';
-  uuid[18] = '-';
-  uuid[23] = '-';
-
-  const newUuid = uuid.join('');
-  return newUuid;
+      const randomIndex = Math.floor(Math.random() * hexDigits.length);
+      return hexDigits.charAt(randomIndex);
+    })
+    .join('');
 };
 
 export const validateId = () => {
