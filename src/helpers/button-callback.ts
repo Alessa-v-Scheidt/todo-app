@@ -1,3 +1,4 @@
+import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
 import { editSubmitParams } from './editSubmitParams';
 import { getTodosFromMyStorage, updateStorage } from './local-storage';
@@ -28,4 +29,10 @@ export const toggleEditInput = (editElement: HTMLElement) => {
     editRef.style.display = 'none';
     editRef.dataset.state = '';
   }
+};
+
+export const renderAddButton = () => {
+  const addButton = document.getElementById('open-modal');
+
+  addButton?.addEventListener('click', openModalCallback);
 };

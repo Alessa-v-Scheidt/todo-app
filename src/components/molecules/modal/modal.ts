@@ -1,4 +1,4 @@
-import { addTodo } from '../components/organisms/Todos/todos';
+import { addTodo } from '../../organisms/Todos/todos';
 
 export const openModalCallback = () => {
   const modal = document.getElementById('modal');
@@ -8,8 +8,8 @@ export const openModalCallback = () => {
 
 export const closeModal = (event: MouseEvent) => {
   const modal = document.getElementById('modal');
-  if (!modal || event.target !== modal) return;
-  modal.style.display = 'none';
+
+  if (modal && event.target === modal) modal.style.display = 'none';
 };
 
 export const addNewTodo = () => {
