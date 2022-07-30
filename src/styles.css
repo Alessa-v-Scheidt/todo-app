@@ -73,24 +73,32 @@ li {
   border-width: var(--boder-width-m) var(--boder-width-m);
   border-radius: 10px;
   margin: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   padding: 1.25rem;
   box-shadow: 2px 5px 5px rgb(0 0 0 / 30%);
 }
 
+li > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li > div > div {
+  display: flex;
+  align-items: center;
+}
+
 input {
-  background-color: red;
+  background-color: var(--medium);
+  flex-grow: 1;
 }
 
 button {
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
   margin: 0 0.25rem;
   background-color: var(--lightest);
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #open-modal {

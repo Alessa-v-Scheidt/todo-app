@@ -1,10 +1,11 @@
-import { generateButton } from '../../atoms/button/button';
+import { generateIconButton } from '../../atoms/button/button';
+import checkmark from '../../../icons/checkmark.svg';
 
 export const generateEditElement = (editSubmitCallback: Function) => {
   const newEditElement = document.createElement('div');
   const editInput = document.createElement('input');
-  const editSubmitButton = generateButton({
-    text: 'submit',
+  const editSubmitButton = generateIconButton({
+    src: checkmark,
     onClick: () => editSubmitCallback(editInput),
   });
 

@@ -23,7 +23,7 @@ export const toggleEditInput = (editElement: HTMLElement) => {
   const editRef = editElement;
 
   if (editRef?.style.display === 'none') {
-    editRef.style.display = 'block';
+    editRef.style.display = 'flex';
     editRef.dataset.state = 'active';
   } else {
     editRef.style.display = 'none';
