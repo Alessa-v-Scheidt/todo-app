@@ -15,16 +15,17 @@ export const generateListElement = ({
   const todoTask = document.createElement('div');
   todoTask.textContent = text;
   const editElement = generateEditElement(editSubmitCallback);
+
   const editButton = generateIconButton({
     src: pencil,
     onClick: () => editCallback(editElement),
   });
-
   const deleteButton = generateIconButton({
     src: trashcan,
     onClick: deleteCallback,
   });
   const buttonContainer = document.createElement('div');
+
   buttonContainer.appendChild(editButton);
   buttonContainer.appendChild(deleteButton);
 
@@ -33,6 +34,8 @@ export const generateListElement = ({
 
   newListElement.appendChild(elementContainer);
   newListElement.appendChild(editElement);
+
+  newListElement.setAttribute('draggable', 'true');
 
   return newListElement;
 };
