@@ -1,19 +1,21 @@
-import { TextButtonParams, IconButtonParams } from './ButtonParams';
+import { AsyncButtonParams, ButtonParams } from './ButtonParams';
 
-export const generateTextButton = ({ text, onClick: callback }: TextButtonParams) => {
+export const generateButton = ({ content, onClick }: ButtonParams) => {
   const newButton = document.createElement('button');
-  newButton.textContent = text;
-  newButton.addEventListener('click', callback);
+  newButton.append(content);
+  newButton.addEventListener('click', onClick);
 
   return newButton;
 };
 
-export const generateIconButton = ({ src, onClick: callback }: IconButtonParams) => {
+export const generateAsyncButton = ({ content, onClick }: AsyncButtonParams) => {
   const newButton = document.createElement('button');
-  const imageElement = document.createElement('img');
-  imageElement.src = src;
-  newButton.appendChild(imageElement);
-  newButton.addEventListener('click', callback);
+  newButton.append(content);
+  newButton.addEventListener('click', async () => {
+    newButton.disabled = true;
+    await onClick();
+    newButton.disabled = false;
+  });
 
   return newButton;
 };

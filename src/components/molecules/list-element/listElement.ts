@@ -1,5 +1,5 @@
 import { ListElementParams } from './ListElementParams';
-import { generateIconButton } from '../../atoms/button/button';
+import { generateButton } from '../../atoms/button/button';
 import { generateEditElement } from '../edit-element/editElement';
 import pencil from '../../../icons/pencil.svg';
 import trashcan from '../../../icons/trashcan.svg';
@@ -16,12 +16,16 @@ export const generateListElement = ({
   todoTask.textContent = text;
   const editElement = generateEditElement(editSubmitCallback);
 
-  const editButton = generateIconButton({
-    src: pencil,
+  const pencilImage = document.createElement('img');
+  pencilImage.src = pencil;
+  const editButton = generateButton({
+    content: pencilImage,
     onClick: () => editCallback(editElement),
   });
-  const deleteButton = generateIconButton({
-    src: trashcan,
+  const trashcanImage = document.createElement('img');
+  trashcanImage.src = trashcan;
+  const deleteButton = generateButton({
+    content: trashcanImage,
     onClick: deleteCallback,
   });
   const buttonContainer = document.createElement('div');

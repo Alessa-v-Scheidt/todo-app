@@ -1,9 +1,9 @@
-export interface TextButtonParams {
-  text: string
+export interface ButtonParams {
+  content: HTMLElement | string
   onClick: () => void
 }
 
-export interface IconButtonParams {
-  src: string
-  onClick: () => void
+export interface AsyncButtonParams {
+  content: HTMLElement | string
+  onClick: () => Promise<any>
 }
