@@ -1,5 +1,5 @@
 import { addNewTodo, closeModal } from '../components/molecules/modal/modal';
-import { renderAddButton } from './button-callback';
+import { renderAddButton } from './buttonCallback';
 
 export const renderModal = () => {
   renderAddButton();

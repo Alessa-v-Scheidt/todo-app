@@ -1,4 +1,4 @@
-export interface editSubmitParams {
+export interface EditSubmitParams {
   todoId: string
   input: HTMLInputElement
 }

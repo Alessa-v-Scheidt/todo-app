@@ -1,12 +1,12 @@
 import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
-import { editSubmitParams } from './editSubmitParams';
-import { getTodosFromMyStorage, updateStorage } from './local-storage';
+import { EditSubmitParams } from './EditSubmitParams';
+import { getTodosFromMyStorage, updateStorage } from './localStorage';
 import { Todo } from './Todo';
 
 const todos: Todo[] = getTodosFromMyStorage();
 
-export const submitEditedTodo = ({ todoId, input }: editSubmitParams) => {
+export const submitEditedTodo = ({ todoId, input }: EditSubmitParams) => {
   if (input.parentElement?.dataset.state !== 'active') return;
 
   const todoToEdit = todos.find((todo) => todo.id === todoId);

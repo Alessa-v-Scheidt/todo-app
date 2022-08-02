@@ -1,5 +1,5 @@
 import { renderTodos } from '../components/organisms/Todos/todos';
-import { updateStorage } from './local-storage';
+import { updateStorage } from './localStorage';
 import { Todo } from './Todo';
 
 let listOfSiblings: any[];

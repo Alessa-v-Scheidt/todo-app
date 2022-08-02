@@ -1,9 +1,9 @@
 import { Todo } from '../../../helpers/Todo';
-import { validateId } from '../../../helpers/id-helper';
-import { updateStorage } from '../../../helpers/local-storage';
+import { validateId } from '../../../helpers/idHelper';
+import { updateStorage } from '../../../helpers/localStorage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/list-element/listElement';
-import { toggleEditInput, submitEditedTodo } from '../../../helpers/button-callback';
+import { toggleEditInput, submitEditedTodo } from '../../../helpers/buttonCallback';
 
 const container = todoContainer;
 let todos: Todo[];
