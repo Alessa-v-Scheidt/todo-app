@@ -1,3 +1,4 @@
+import './edit-element.css';
 import { generateButton } from '../../atoms/button/button';
 import checkmark from '../../../icons/checkmark.svg';
 

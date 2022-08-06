@@ -1,3 +1,4 @@
+import './button.css';
 import { AsyncButtonParams, ButtonParams } from './ButtonParams';
 
 export const generateButton = ({ content, onClick }: ButtonParams) => {

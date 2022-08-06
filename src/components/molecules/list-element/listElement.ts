@@ -1,3 +1,4 @@
+import './list-element.css';
 import { ListElementParams } from './ListElementParams';
 import { generateButton } from '../../atoms/button/button';
 import { generateEditElement } from '../edit-element/editElement';
