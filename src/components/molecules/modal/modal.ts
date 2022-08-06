@@ -13,7 +13,7 @@ export const closeModal = (event: MouseEvent) => {
 };
 
 export const addNewTodo = () => {
-  const text = document.getElementById('newTodoInput') as HTMLInputElement;
+  const text = document.getElementById('new-todo-input') as HTMLInputElement;
   if (text?.value === '') return;
 
   addTodo(text.value);

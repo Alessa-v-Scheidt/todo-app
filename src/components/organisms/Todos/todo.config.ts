@@ -1,1 +1,1 @@
-export default document.getElementById('todoContainer');
+export default document.getElementById('todo-container');
