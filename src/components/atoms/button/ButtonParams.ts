@@ -7,4 +7,5 @@ export interface ButtonParams {
 export interface AsyncButtonParams {
   content: HTMLElement | string
   onClick: () => Promise<any>
+  cssClasses?: string[]
 }
