@@ -33,6 +33,10 @@ export const generateListElement = ({
   });
   const buttonContainer = document.createElement('div');
 
+  newListElement.classList.add('list-element', 'list-element__border');
+  elementContainer.classList.add('list-element__div');
+  buttonContainer.classList.add('list-element__div--button-container');
+
   buttonContainer.appendChild(editButton);
   buttonContainer.appendChild(deleteButton);
 

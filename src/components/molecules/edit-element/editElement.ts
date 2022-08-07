@@ -1,4 +1,3 @@
-import './edit-element.css';
 import { generateButton } from '../../atoms/button/button';
 import checkmark from '../../../icons/checkmark.svg';
 
@@ -12,6 +11,9 @@ export const generateEditElement = (editSubmitCallback: Function) => {
     onClick: () => editSubmitCallback(editInput),
     cssClasses: ['button', 'button__border--none', 'button__image'],
   });
+
+  newEditElement.classList.add('list-element-div', 'list-element__div--edit-Element');
+  editInput.classList.add('list-element__input');
 
   // damit Element standardmäßig hidden ist
   newEditElement.style.display = 'none';
