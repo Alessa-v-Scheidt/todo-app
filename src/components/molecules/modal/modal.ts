@@ -1,3 +1,4 @@
+import './modal.css';
 import { addTodo } from '../../organisms/Todos/todos';
 
 export const openModalCallback = () => {

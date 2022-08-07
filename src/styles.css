@@ -58,45 +58,4 @@ ul {
 
 /* ############################################################################ */
 
-/* Classes */
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--darkest-transparent);
-}
-
-/* so schreibe ich
-.modal {
-  &__button {
-    &--close {
-
-    }
-  }
-}
-
-so soll postcss es mir danach zusammen schustern
-.modal__button--close {
-} */
-
-.modal-content {
-  background-color: var(--lightest);
-  padding: 20px;
-  width: 60%;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-}
-
-/* ############################################################################ */
-
 /* Media Querys */
