@@ -27,6 +27,8 @@
 
 .list-element__div--edit-Element {
   margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: solid 1px var(--darkest);
 }
 
 .list-element__input {
