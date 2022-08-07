@@ -10,6 +10,7 @@ export const generateEditElement = (editSubmitCallback: Function) => {
   const editSubmitButton = generateButton({
     content: checkmarkImage,
     onClick: () => editSubmitCallback(editInput),
+    cssClasses: ['button', 'button__border--none', 'button__image'],
   });
 
   // damit Element standardmäßig hidden ist

@@ -1,6 +1,7 @@
 export interface ButtonParams {
   content: HTMLElement | string
   onClick: () => void
+  cssClasses?: string[]
 }
 
 export interface AsyncButtonParams {

@@ -1,8 +1,10 @@
+import { generateButton } from '../components/atoms/button/button';
 import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
 import { EditSubmitParams } from './EditSubmitParams';
 import { getTodosFromMyStorage, updateStorage } from './localStorage';
 import { Todo } from './Todo';
+import plus from '../icons/plus.svg';
 
 const todos: Todo[] = getTodosFromMyStorage();
 
@@ -32,7 +34,15 @@ export const toggleEditInput = (editElement: HTMLElement) => {
 };
 
 export const renderAddButton = () => {
-  const addButton = document.getElementById('open-modal');
+  const body = document.querySelector('body');
+  const plusImage = document.createElement('img');
+  plusImage.src = plus;
 
-  addButton?.addEventListener('click', openModalCallback);
+  const addButton = generateButton({
+    content: plusImage,
+    onClick: () => openModalCallback(),
+    cssClasses: ['button', 'button--rounded', 'button__border', 'button__image', 'button__image--padding'],
+  });
+
+  body?.appendChild(addButton);
 };

@@ -10,17 +10,6 @@
   --yellow-dark: #fce800;
   --darkest-transparent: rgb(0 0 0 / 15%);
 
-  /* Spacing */
-  --xxs: 0.25rem;
-  --xs: 0.5rem;
-  --s: 0.75rem;
-  --m: 1rem;
-  --l: 1.25rem;
-  --xl: 1.5rem;
-  --xxl: 2rem;
-  --xxxl: 3rem;
-  --xxxxl: 4rem;
-
   /* Border */
   --border-width-s: 1px;
   --boder-width-m: 2px;
@@ -70,21 +59,6 @@ ul {
 input {
   border: solid 2px black;
   flex-grow: 1;
-}
-
-#open-modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  font-size: 3rem;
-  box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
 }
 
 /* ############################################################################ */

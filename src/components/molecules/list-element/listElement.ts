@@ -22,12 +22,14 @@ export const generateListElement = ({
   const editButton = generateButton({
     content: pencilImage,
     onClick: () => editCallback(editElement),
+    cssClasses: ['button', 'button__border--none', 'button__image'],
   });
   const trashcanImage = document.createElement('img');
   trashcanImage.src = trashcan;
   const deleteButton = generateButton({
     content: trashcanImage,
     onClick: deleteCallback,
+    cssClasses: ['button', 'button__border--none', 'button__image'],
   });
   const buttonContainer = document.createElement('div');
 

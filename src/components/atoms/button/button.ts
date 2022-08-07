@@ -1,9 +1,10 @@
 import './button.css';
 import { AsyncButtonParams, ButtonParams } from './ButtonParams';
 
-export const generateButton = ({ content, onClick }: ButtonParams) => {
+export const generateButton = ({ content, onClick, cssClasses = [] }: ButtonParams) => {
   const newButton = document.createElement('button');
   newButton.append(content);
+  newButton.classList.add(...cssClasses);
   newButton.addEventListener('click', onClick);
 
   return newButton;
