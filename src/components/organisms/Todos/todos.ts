@@ -1,4 +1,4 @@
-import { Todo } from '../../../helpers/Todo';
+import { Todo } from '../../../helpers/Todo.interface';
 import { validateId } from '../../../helpers/idHelper';
 import { getTodosFromMyStorage, updateStorage } from '../../../helpers/localStorage';
 import todoContainer from './todo.config';

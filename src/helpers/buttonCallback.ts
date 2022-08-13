@@ -3,7 +3,7 @@ import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
 import { EditSubmitParams } from './EditSubmitParams';
 import { getTodosFromMyStorage, updateStorage } from './localStorage';
-import { Todo } from './Todo';
+import { Todo } from './Todo.interface';
 import plus from '../icons/plus.svg';
 
 const todos: Todo[] = getTodosFromMyStorage();
@@ -41,7 +41,7 @@ export const renderAddButton = () => {
   const addButton = generateButton({
     content: plusImage,
     onClick: () => openModalCallback(),
-    cssClasses: ['button', 'button--rounded', 'button__border', 'button__image', 'button__image--padding'],
+    cssClasses: ['button', 'button--rounded', 'button--border', 'button__image', 'button__image--padding'],
   });
 
   body?.appendChild(addButton);

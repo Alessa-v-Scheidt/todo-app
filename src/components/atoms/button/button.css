@@ -4,34 +4,29 @@
   margin: 0.25rem 0.5rem;
   width: 1.5rem;
   height: 1.5rem;
-}
 
-.button--rounded {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-}
+  &--rounded {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+  }
 
-.button__border {
-  border: solid 2px black;
-  box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
-}
+  &--border {
+    border: solid 2px black;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
+  }
 
-.button__border--none {
-  border: none;
-  box-shadow: none;
-}
+  &__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.button__image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.button__image--padding {
-  padding: 1.25rem;
+    &--padding {
+      padding: 1.25rem;
+    }
+  }
 }

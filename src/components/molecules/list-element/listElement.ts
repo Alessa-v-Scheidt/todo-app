@@ -22,20 +22,20 @@ export const generateListElement = ({
   const editButton = generateButton({
     content: pencilImage,
     onClick: () => editCallback(editElement),
-    cssClasses: ['button', 'button__border--none', 'button__image'],
+    cssClasses: ['button', 'button__image'],
   });
   const trashcanImage = document.createElement('img');
   trashcanImage.src = trashcan;
   const deleteButton = generateButton({
     content: trashcanImage,
     onClick: deleteCallback,
-    cssClasses: ['button', 'button__border--none', 'button__image'],
+    cssClasses: ['button', 'button__image'],
   });
   const buttonContainer = document.createElement('div');
 
-  newListElement.classList.add('list-element', 'list-element__border');
-  elementContainer.classList.add('list-element__div');
-  buttonContainer.classList.add('list-element__div--button-container');
+  newListElement.classList.add('list-element', 'list-element--border');
+  elementContainer.classList.add('list-element__container');
+  buttonContainer.classList.add('list-element__container--button-container');
 
   buttonContainer.appendChild(editButton);
   buttonContainer.appendChild(deleteButton);
