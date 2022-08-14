@@ -1,13 +1,14 @@
-import { versionsnummer, trennstriche } from './idHelper.config';
+const uuidVersionNumber = '4';
+const positionOfHyphens = [8, 13, 18, 23];
 
 const generateId = () => {
   const hexDigits = '0123456789abcdef';
 
   return new Array(36).fill('0')
     .map((element, index) => {
-      if (index === 14) return versionsnummer;
+      if (index === 14) return uuidVersionNumber;
 
-      if (trennstriche.includes(index)) return '-';
+      if (positionOfHyphens.includes(index)) return '-';
 
       const randomIndex = Math.floor(Math.random() * hexDigits.length);
       return hexDigits.charAt(randomIndex);
