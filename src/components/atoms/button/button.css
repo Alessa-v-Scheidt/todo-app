@@ -1,4 +1,3 @@
-/* stylelint-disable selector-class-pattern */
 .button {
   background-color: var(--lightest);
   margin: 0.25rem 0.5rem;
@@ -27,6 +26,42 @@
 
     &--padding {
       padding: 1.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .button {
+    &--rounded {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .button {
+    &--rounded {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .button {
+    &--rounded {
+      right: 3rem;
+      bottom: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .button {
+    &--rounded {
+      right: 3rem;
+      bottom: 3rem;
     }
   }
 }
