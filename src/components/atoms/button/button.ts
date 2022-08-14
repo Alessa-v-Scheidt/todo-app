@@ -1,5 +1,5 @@
 import './button.css';
-import { AsyncButtonParams, ButtonParams } from './ButtonParams.interface';
+import { AsyncButtonParams, ButtonParams } from './interface/ButtonParams.interface';
 
 export const generateButton = ({ content, onClick, cssClasses = [] }: ButtonParams) => {
   const newButton = document.createElement('button');

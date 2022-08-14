@@ -1,6 +1,6 @@
-import { Todo } from '../../../helpers/Todo.interface';
+import { Todo } from '../../../helpers/interfaces/Todo.interface';
 import { validateId } from '../../../helpers/idHelper';
-import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/localStorage';
+import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/local-storage/localStorage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/list-element/listElement';
 import { toggleEditInput, submitEditedTodo } from '../../../helpers/buttonCallback';

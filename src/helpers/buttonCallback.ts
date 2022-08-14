@@ -1,9 +1,9 @@
 import { generateButton } from '../components/atoms/button/button';
 import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
-import { EditSubmitParams } from './EditSubmitParams.interface';
-import { getTodosFromLocalStorage, updateStorage } from './localStorage';
-import { Todo } from './Todo.interface';
+import { EditSubmitParams } from './interfaces/EditSubmitParams.interface';
+import { getTodosFromLocalStorage, updateStorage } from './local-storage/localStorage';
+import { Todo } from './interfaces/Todo.interface';
 import plus from '../icons/plus.svg';
 
 const todos: Todo[] = getTodosFromLocalStorage();

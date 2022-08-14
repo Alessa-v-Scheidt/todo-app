@@ -27,9 +27,9 @@ export const initDragAndDrop = <T>(
     const draggedIndex = listOfSiblings.indexOf(draggedElement);
     const dropIndex = listOfSiblings.indexOf(dropTarget);
 
-    const draggedTodo = listOfDraggableElements[draggedIndex];
+    const draggedListElement = listOfDraggableElements[draggedIndex];
     listOfDraggableElements.splice(draggedIndex, 1);
-    listOfDraggableElements.splice(dropIndex, 0, draggedTodo);
+    listOfDraggableElements.splice(dropIndex, 0, draggedListElement);
 
     next(listOfDraggableElements);
   });
