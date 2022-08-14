@@ -1,12 +1,12 @@
 import { generateButton } from '../components/atoms/button/button';
 import { openModalCallback } from '../components/molecules/modal/modal';
 import { renderTodos } from '../components/organisms/Todos/todos';
-import { EditSubmitParams } from './EditSubmitParams';
-import { getTodosFromMyStorage, updateStorage } from './localStorage';
+import { EditSubmitParams } from './EditSubmitParams.interface';
+import { getTodosFromLocalStorage, updateStorage } from './localStorage';
 import { Todo } from './Todo.interface';
 import plus from '../icons/plus.svg';
 
-const todos: Todo[] = getTodosFromMyStorage();
+const todos: Todo[] = getTodosFromLocalStorage();
 
 export const submitEditedTodo = ({ todoId, input }: EditSubmitParams) => {
   if (input.parentElement?.dataset.state !== 'active') return;

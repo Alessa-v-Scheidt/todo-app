@@ -1,6 +1,6 @@
 import { Todo } from '../../../helpers/Todo.interface';
 import { validateId } from '../../../helpers/idHelper';
-import { getTodosFromMyStorage, updateStorage } from '../../../helpers/localStorage';
+import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/localStorage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/list-element/listElement';
 import { toggleEditInput, submitEditedTodo } from '../../../helpers/buttonCallback';
@@ -49,7 +49,7 @@ export const addTodo = (task: string) => {
 };
 
 export const initTodoList = () => {
-  todos = getTodosFromMyStorage();
+  todos = getTodosFromLocalStorage();
   initDragAndDrop<Todo>(todos, (updatedList: Todo[]) => {
     renderTodos(updatedList);
     updateStorage(updatedList);

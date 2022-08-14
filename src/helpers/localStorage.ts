@@ -6,7 +6,7 @@ export const updateStorage = (todos: Todo[]) => {
   localStorage.setItem(storageKey, JSON.stringify(todos));
 };
 
-export const getTodosFromMyStorage = (): Todo[] => {
+export const getTodosFromLocalStorage = (): Todo[] => {
   const oldTodoString = localStorage.getItem(storageKey);
 
   if (!oldTodoString) return [];
