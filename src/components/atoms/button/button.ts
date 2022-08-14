@@ -10,7 +10,8 @@ export const generateButton = ({ content, onClick, cssClasses = [] }: ButtonPara
   return newButton;
 };
 
-export const generateAsyncButton = ({ content, onClick, cssClasses = [] }: AsyncButtonParams) => {
+export const generateAsyncButton = <T>({ content, onClick, cssClasses = [] }
+: AsyncButtonParams<T>) => {
   const newButton = document.createElement('button');
   newButton.append(content);
   if (cssClasses) newButton.classList.add(...cssClasses);
