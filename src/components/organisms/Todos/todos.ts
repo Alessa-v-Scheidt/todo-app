@@ -3,8 +3,8 @@ import { validateId } from '../../../helpers/idHelper';
 import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/local-storage/localStorage';
 import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/list-element/listElement';
-import { toggleEditInput, submitEditedTodo } from '../../../helpers/buttonCallback';
 import { initDragAndDrop } from '../../../helpers/dragAndDrop';
+import { submitEditedTodo, toggleEditInput } from '../../molecules/edit-element/editElement';
 
 let todos: Todo[] = [];
 

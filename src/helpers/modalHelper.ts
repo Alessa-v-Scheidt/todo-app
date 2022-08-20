@@ -1,5 +1,5 @@
+import { renderAddButton } from '../components/molecules/add-button/add-button';
 import { generateModal } from '../components/molecules/modal/modal';
-import { renderAddButton } from './buttonCallback';
 
 export const renderModal = () => {
   generateModal();
