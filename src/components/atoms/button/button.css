@@ -11,6 +11,11 @@
     position: fixed;
     right: 2rem;
     bottom: 2rem;
+
+    @media only screen and (min-width: 721px) {
+      right: 3rem;
+      bottom: 3rem;
+    }
   }
 
   &--border {
@@ -26,42 +31,6 @@
 
     &--padding {
       padding: 1.25rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .button {
-    &--rounded {
-      right: 2rem;
-      bottom: 2rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 720px) {
-  .button {
-    &--rounded {
-      right: 2rem;
-      bottom: 2rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  .button {
-    &--rounded {
-      right: 3rem;
-      bottom: 3rem;
-    }
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .button {
-    &--rounded {
-      right: 3rem;
-      bottom: 3rem;
     }
   }
 }

@@ -24,6 +24,11 @@
   --fs-m: 14px;
   --fs-l: 32px;
   --text-shadow-light: 5px 2px 0 var(--lightest);
+
+  /* Media Query Formats */
+  --mobile: 360px;
+  --tablet: 720px;
+  --desktop: 1280px;
 }
 
 /* ############################################################################ */
