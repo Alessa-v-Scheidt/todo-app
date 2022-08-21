@@ -2,26 +2,24 @@ import './modal.css';
 import { addTodo } from '../../organisms/Todos/todos';
 import { generateButton } from '../../atoms/button/button';
 
+let modal: HTMLElement | undefined;
+
 export const openModalCallback = () => {
-  const modal = document.getElementById('modal');
   if (!modal) return;
   modal.style.display = 'block';
 };
 
-export const closeModal = (event: MouseEvent) => {
-  const modal = document.getElementById('modal');
-
+const closeModal = (event: MouseEvent) => {
   if (modal && event.target === modal) modal.style.display = 'none';
 };
 
-export const addNewTodo = () => {
+const addNewTodo = () => {
   const text = document.getElementById('new-todo-input') as HTMLInputElement;
   if (text?.value === '') return;
 
   addTodo(text.value);
   text.value = '';
 
-  const modal = document.getElementById('modal');
   if (!modal) return;
   modal.style.display = 'none';
 };
@@ -36,7 +34,6 @@ export const generateModal = () => {
     cssClasses: ['modal__button', 'modal__button--border'],
   });
 
-  newModal.setAttribute('id', 'modal');
   modalInput.setAttribute('id', 'new-todo-input');
 
   newModal.addEventListener('click', closeModal);
@@ -51,4 +48,5 @@ export const generateModal = () => {
   newModal.appendChild(modalContainer);
 
   document.querySelector('body')?.appendChild(newModal);
+  modal = newModal;
 };
