@@ -18,6 +18,7 @@
 
   &--border {
     border-style: solid;
+    border-color: var(--darker);
     border-width: var(--boder-width-m) var(--boder-width-m);
     border-radius: 10px;
     box-shadow: 2px 5px 5px rgb(0 0 0 / 30%);

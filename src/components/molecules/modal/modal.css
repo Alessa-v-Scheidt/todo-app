@@ -38,7 +38,7 @@
     height: 2rem;
 
     &--border {
-      border: solid 2px var(--darkest);
+      border: solid 2px var(--darker);
       border-radius: 4px;
       box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
     }

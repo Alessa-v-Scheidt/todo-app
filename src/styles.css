@@ -4,6 +4,7 @@
   --light: #f0f0f0;
   --medium: #83787b;
   --dark: #5f575a;
+  --darker: #242526;
   --darkest: #000;
   --yellow-light: #fff477;
   --yellow-medium: #ffed00;
@@ -59,4 +60,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+img {
+  width: 1.5rem;
 }

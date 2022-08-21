@@ -5,6 +5,7 @@
   height: 1.5rem;
 
   &--rounded {
+    background-color: var(--yellow-dark);
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
@@ -19,7 +20,6 @@
   }
 
   &--border {
-    border: solid 2px black;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
   }
 
@@ -31,6 +31,12 @@
 
     &--padding {
       padding: 1.25rem;
+    }
+
+    &--larger {
+      img {
+        width: 2rem;
+      }
     }
   }
 }
