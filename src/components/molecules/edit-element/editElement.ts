@@ -1,7 +1,7 @@
 import './edit-element.css';
 import { generateButton } from '../../atoms/button/button';
 import checkmark from '../../../icons/checkmark.svg';
-import { EditSubmitParams } from './interface/EditSubmitParams.interface';
+import { EditSubmitParams } from './interface/EditSubmit.interface';
 import { Todo } from '../../../helpers/interfaces/Todo.interface';
 import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/local-storage/localStorage';
 import { renderTodos } from '../../organisms/Todos/todos';

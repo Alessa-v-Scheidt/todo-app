@@ -1,5 +1,5 @@
 import './list-element.css';
-import { ListElementParams } from './interface/ListElementParams.interface';
+import { ListElementParams } from './interface/ListElement.interface';
 import { generateButton } from '../../atoms/button/button';
 import { generateEditElement } from '../edit-element/editElement';
 import pencil from '../../../icons/pencil.svg';
