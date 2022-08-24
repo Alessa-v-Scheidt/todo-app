@@ -13,7 +13,7 @@
     border-radius: 4px;
     flex-grow: 1;
     margin: 1rem;
-    padding: 0.5rem;
+    padding: .5rem;
 
     @media only screen and (max-width: 720px) {
       width: 100%;
@@ -33,7 +33,7 @@
 
   &__button {
     background-color: var(--lightest);
-    margin: 0.25rem 0.5rem;
+    margin: .25rem .5rem;
     width: 3rem;
     height: 2rem;
 
