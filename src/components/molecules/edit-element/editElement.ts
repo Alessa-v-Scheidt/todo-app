@@ -4,7 +4,7 @@ import checkmark from '../../../icons/checkmark.svg';
 import { EditSubmitParams } from './interface/EditSubmit.interface';
 import { Todo } from '../../../helpers/interfaces/Todo.interface';
 import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/local-storage/localStorage';
-import { renderTodos } from '../../organisms/Todos/todos';
+import { renderTodos } from '../../organisms/todos/todos';
 
 export const generateEditElement = (editSubmitCallback: Function) => {
   const newEditElement = document.createElement('div');

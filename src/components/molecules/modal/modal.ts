@@ -1,5 +1,5 @@
 import './modal.css';
-import { addTodo } from '../../organisms/Todos/todos';
+import { addTodo } from '../../organisms/todos/todos';
 import { generateButton } from '../../atoms/button/button';
 
 let modal: HTMLElement | undefined;
