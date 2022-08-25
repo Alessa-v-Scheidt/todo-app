@@ -1,0 +1,14 @@
+.header {
+  background-image: linear-gradient(var(--yellow-dark), var(--yellow-light));
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+
+  &__headline {
+    font-weight: var(--fw-bold);
+    color: var(--dark);
+    text-shadow: var(--text-shadow-light);
+    font-size: 3rem;
+    padding-left: 2rem;
+  }
+}
