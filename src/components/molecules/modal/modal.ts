@@ -47,6 +47,6 @@ export const generateModal = () => {
 
   newModal.appendChild(modalContainer);
 
-  document.querySelector('body')?.appendChild(newModal);
+  document.querySelector('#page-container')?.appendChild(newModal);
   modal = newModal;
 };

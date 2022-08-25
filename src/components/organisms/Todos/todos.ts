@@ -1,14 +1,11 @@
 import { Todo } from '../../../helpers/interfaces/Todo.interface';
 import { validateId } from '../../../helpers/idHelper';
 import { getTodosFromLocalStorage, updateStorage } from '../../../helpers/local-storage/localStorage';
-import todoContainer from './todo.config';
 import { generateListElement } from '../../molecules/list-element/listElement';
 import { initDragAndDrop } from '../../../helpers/dragAndDrop';
 import { submitEditedTodo, toggleEditInput } from '../../molecules/edit-element/editElement';
 
 let todos: Todo[] = [];
-
-const container = todoContainer;
 
 const deleteTodo = (id: string, next: Function) => {
   const deleteIndex = todos.findIndex((todoToDelete) => todoToDelete.id === id);
@@ -19,6 +16,7 @@ const deleteTodo = (id: string, next: Function) => {
 
 // Render todo list
 export const renderTodos = (todosToRender: Todo[]) => {
+  const container = document.querySelector('#todo-container');
   if (!container) return;
   container.textContent = '';
 

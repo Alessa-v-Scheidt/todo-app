@@ -4,7 +4,7 @@ import { openModalCallback } from '../modal/modal';
 import plusIcon from '../../../icons/plusIcon.svg';
 
 export const renderAddButton = () => {
-  const body = document.querySelector('body');
+  const page = document.querySelector('#page-container');
   const plusImage = document.createElement('img');
   plusImage.src = plusIcon;
 
@@ -14,5 +14,5 @@ export const renderAddButton = () => {
     cssClasses: ['button', 'button--rounded', 'button--border', 'button__image', 'button__image--padding', 'button__image--larger'],
   });
 
-  body?.appendChild(addButton);
+  page?.appendChild(addButton);
 };
